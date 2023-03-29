@@ -1,0 +1,19 @@
+{
+  "name": "dynamiclandingpage",
+  "version": "1.0.0",
+  "description": "a front-end dynamic multi-sectional landing page using DOM manipulation, events, methods, and logic.",
+  "main": "app.js",
+  "scripts": {
+    "test": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brandonawilliams1/dynamicLandinPage.git"
+  },
+  "author": "Brandon Williams",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/brandonawilliams1/dynamicLandinPage/issues"
+  },
+  "homepage": "https://github.com/brandonawilliams1/dynamicLandinPage#readme"
+}
