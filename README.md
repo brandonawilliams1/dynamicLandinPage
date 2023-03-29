@@ -1,5 +1,7 @@
 # Dynamic Landing Page
 
+**Summery**
+
 ### Screenshots
 
 ## Running The App Remotely
