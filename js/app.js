@@ -24,19 +24,21 @@ function navbarHelper(numItems){
         const navLiEl = document.createElement('li');
         navLiEl.style.color = 'black';
         // navLiEl.textContent = "Item " + (i);
-        navLiEl.innerHTML = `<a href='#section${i}' id='navItem ${i}' class= 'menu__link'>Section ${i}</a>`
+        navLiEl.innerHTML = `<a id='navItem ${i}' class= 'menu__link'>Section ${i}</a>`
         queryNavUl.appendChild(navLiEl);
 
-        navLiEl.addEventListener('click', navTester)
+        
+
+        navLiEl.addEventListener('click', navEvent)
     };
     
     queryNav.appendChild(queryNavUl);
-    // const createNavLi = navLiEl.textContent= "Section 1";
     return queryNav;
 };
 
-function navTester(e){
-console.log(e.target.id)
+function navEvent(e){
+   let getNum = e.target.id.split(" ");
+   scrollToSection(getNum[1]);
 };
 /**
  * End Helper Functions
@@ -48,8 +50,14 @@ console.log(e.target.id)
 const myNavBar = navbarHelper(3);
 
 
-// Add class 'active' to section when near top of viewport
+function scrollToSection(num) {
+    let el = document.querySelector(`#section${num}`);
+    el.scrollIntoView({
+        behavior: "smooth",
+    });
+}
 
+// Add class 'active' to section when near top of viewport
 
 // Scroll to anchor ID using scrollTO event
 

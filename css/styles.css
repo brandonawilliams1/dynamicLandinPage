@@ -18,6 +18,10 @@ body {
     color: #fff;
 }
 
+a {
+    cursor: pointer;
+}
+
 
 /* Typeography General*/
 h1 {
