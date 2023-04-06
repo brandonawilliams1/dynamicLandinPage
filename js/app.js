@@ -66,7 +66,8 @@ function newSectionEl(){
     
     //add section and div to dom
     document.body.appendChild(section);
-    document.body.appendChild(div);
+    // add div to section as a child of the section
+    section.appendChild(div);
 
     // add h2 and p elements to div element
     div.appendChild(heading);
