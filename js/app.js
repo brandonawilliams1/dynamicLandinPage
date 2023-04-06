@@ -63,15 +63,17 @@ function newSectionEl(){
     // add text to the h1 and p element
     heading.textContent = 'Section 4';
     paragraph.textContent = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi fermentum metus faucibus lectus pharetra dapibus. Suspendisse potenti. Aenean aliquam elementum mi, ac euismod augue. Donec eget lacinia ex. Phasellus imperdiet porta orci eget mollis. Sed convallis sollicitudin mauris ac tincidunt. Donec bibendum, nulla eget bibendum consectetur, sem nisi aliquam leo, ut pulvinar quam nunc eu augue. Pellentesque maximus imperdiet elit a pharetra. Duis lectus mi, aliquam in mi quis, aliquam porttitor lacus. Morbi a tincidunt felis. Sed leo nunc, pharetra et elementum non, faucibus vitae elit. Integer nec libero venenatis libero ultricies molestie semper in tellus. Sed congue et odio sed euismod.';
-    
-    //add section and div to dom
-    document.body.appendChild(section);
+
     // add div to section as a child of the section
     section.appendChild(div);
 
     // add h2 and p elements to div element
     div.appendChild(heading);
     div.appendChild(paragraph);
+
+    //select the main element and add the section to it
+    const main = document.querySelector('main');
+    main.appendChild(section);
 
     return section;
 };
@@ -84,11 +86,11 @@ function newSectionEl(){
 
 // build the nav
 const myNavBar = navbarHelper(4);
+
 // call function to add a new section
 newSectionEl();
 
 // Scroll to anchor ID using scrollTO event
-
 function scrollToSection(num) {
     let el = document.querySelector(`#section${num}`);
 
