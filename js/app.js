@@ -7,6 +7,8 @@
  * Define Global Variables
  * 
 */
+const queryNav = document.querySelector('.navbar__menu');
+const queryNavUl = document.querySelector('#navbar__list');
 /**
  * End Global Variables
  * Start Helper Functions
@@ -14,20 +16,19 @@
 */
 // a helper function when called will add an Li elemeent to the ul in the navbar
 function navbarHelper(numItems){
-    const queryNav = document.querySelector('.navbar__menu');
-    const queryNavUl = document.querySelector('#navbar__list');
-    
+    queryNav;
+    queryNavUl;
+
     // repeat create Navbar Li element 3x
     for (let i = 1; i <= numItems; i++) {
         const navLiEl = document.createElement('li');
         navLiEl.style.color = 'black';
-        // navLiEl.textContent = "Item " + (i);
         navLiEl.innerHTML = `<a id='navItem ${i}' class= 'menu__link'>Section ${i}</a>`
         queryNavUl.appendChild(navLiEl);
 
         navLiEl.addEventListener('click', navEvent)
     };
-    
+
     queryNav.appendChild(queryNavUl);
     return queryNav;
 };
@@ -37,8 +38,12 @@ function navEvent(e){
    scrollToSection(getNum[1]);
 };
 
-// creates new sections on the DOM
+/* creates new sections on the DOM
+    to improve this function it should create a new section when called
+*/
 function newSectionEl(){
+    // pass the section id to the li
+     queryNavUl;
     // stores create section method
     const section = document.createElement('section');
     // stores create div element
@@ -49,16 +54,15 @@ function newSectionEl(){
     const paragraph = document.createElement('p');
 
     // add id to new section element
-    section.setAttribute('id', `section`);
+    section.setAttribute('id', 'section4');
+
     // add data attribute to section element
-    const queryNewSection = document.querySelector(`section`);
-    section.setAttribute('data-nav', `section`);
+    const queryNewSection = document.querySelector('section4');
+
+    section.setAttribute('data-nav', `Section 4`);
     
     // add class to new div element
-    section.setAttribute('class', 'landing__container');
-
-    // add pseduo class before h2 and after p 
-    section.classList.add('your-active-class');
+    div.setAttribute('class', 'landing__container');
 
     // add text to the h1 and p element
     heading.textContent = 'Section 4';
