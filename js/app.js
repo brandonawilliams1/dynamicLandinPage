@@ -101,57 +101,59 @@ function scrollToSection(num) {
     el.scrollIntoView({
         behavior: "smooth",
     });
-};
+};    
 
-// define section
-const sections = document.getElementsByTagName('section');
-
-// Add class 'active' to section when near top of viewport
-// for (let i = 0; i < sections.length; i++) {
-//     const section = sections[i];
-//     const sectionId = section.getAttribute('id');
-  
-//     section.addEventListener('mouseenter', function() {
-//       document.querySelector(`a[href='#${sectionId}']`).classList.add("active");
-//     });
-    
-//     section.addEventListener('mouseleave', function() {
-//       document.querySelector(`a[href='#${sectionId}']`).classList.remove("active");
-//     });
-//   }    
-
-// // Add an event listener listening for scroll
 // // Get all sections that have an ID defined
-// const sections = document.querySelectorAll("section[id]");
+const sections = document.querySelectorAll('section');
 
 // // Add an event listener listening for scroll
-// window.addEventListener("scroll", navHighlighter);
+window.addEventListener("scroll", navHighlighter);
 
-// function navHighlighter() {
-  
-//   // Get current scroll position
-//   let scrollY = window.pageYOffset;
-  
-//   // Now we loop through sections to get height, top and ID values for each
-//   sections.forEach(current => {
-//     const sectionHeight = current.offsetHeight;
-//     const sectionTop = current.offsetTop - 50;
-//     sectionId = current.getAttribute("id");
+function navHighlighter(){
     
-//     /*
-//     - If our current scroll position enters the space where current section on screen is, add .active class to corresponding navigation link, else remove it
-//     - To know which link needs an active class, we use sectionId variable we are getting while looping through sections as an selector
-//     */
-//     if (
-//       scrollY > sectionTop &&
-//       scrollY <= sectionTop + sectionHeight
-//     ){
-//       document.querySelector(".navigation a[href*=" + sectionId + "]").classList.add("active");
-//     } else {
-//       document.querySelector(".navigation a[href*=" + sectionId + "]").classList.remove("active");
-//     }
-//   });
-// }
+    // Get current scroll position
+    let scrollY = window.pageYOffset;
+    let scrollLocation = scrollY;
+
+
+    console.log('scroll Y = ' + scrollY );
+    console.log('your scroll location ' + scrollLocation);
+
+
+// loops over the sections object to return the current section
+const sections = document.querySelectorAll('section');
+
+
+window.addEventListener("scroll", navHighlighter);
+
+function navHighlighter(){
+
+        let scrollY = window.pageYOffset;
+        let scrollLocation = scrollY;
+
+        console.log('scroll Y = ' + scrollY );
+        console.log('your scroll location ' + scrollLocation);
+
+        for (let i = 0; i < sections.length; i++){
+            // const addClassLi = document.querySelectorAll('li');
+            // console.log(addClassLi);
+
+            if (scrollLocation < 1000){
+                document.getElementById('navItem 1').classList.add('class=', "your-active-class");
+            } else if (scrollLocation > 1000 && scrollLocation < 1100){
+                document.getElementById('navItem 2').classList.add("your-active-class");
+            } else if (scrollLocation > 1200 && scrollLocation < 2400){
+                document.getElementById('navItem 3').classList.add("your-active-class");
+            } else if (scrollLocation > 2400){
+                document.getElementById('navItem 4').classList.add("your-active-class");
+            };
+        }    
+    };
+        
+};
+  
+    
+
 
 /**
  * End Main Functions
