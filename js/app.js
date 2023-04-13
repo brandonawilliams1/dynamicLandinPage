@@ -23,7 +23,7 @@ function navbarHelper(numItems){
     for (let i = 1; i <= numItems; i++) {
         const navLiEl = document.createElement('li');
         navLiEl.style.color = 'black';
-        navLiEl.innerHTML = `<a id='navItem ${i}' class= 'menu__link'>Section ${i}</a>`
+        navLiEl.innerHTML = `<a id='navItem ${i}'class= 'menu__link'>Section ${i}</a>`
         queryNavUl.appendChild(navLiEl);
 
         navLiEl.addEventListener('click', navEvent)
@@ -103,12 +103,6 @@ function scrollToSection(num) {
     });
 };    
 
-// // Get all sections that have an ID defined
-const sections = document.querySelectorAll('section');
-
-// // Add an event listener listening for scroll
-window.addEventListener("scroll", navHighlighter);
-
 function navHighlighter(){
     
     // Get current scroll position
@@ -118,53 +112,37 @@ function navHighlighter(){
 
     console.log('scroll Y = ' + scrollY );
     console.log('your scroll location ' + scrollLocation);
-
-
-// loops over the sections object to return the current section
-const sections = document.querySelectorAll('section');
-
-
-window.addEventListener("scroll", navHighlighter);
-
-function navHighlighter(){
-
-        let scrollY = window.pageYOffset;
-        let scrollLocation = scrollY;
-
-        console.log('scroll Y = ' + scrollY );
-        console.log('your scroll location ' + scrollLocation);
-
-        for (let i = 0; i < sections.length; i++){
-            // const addClassLi = document.querySelectorAll('li');
-            // console.log(addClassLi);
-
-            if (scrollLocation < 1000){
-                document.getElementById('navItem 1').classList.add('class=', "your-active-class");
-            } else if (scrollLocation > 1000 && scrollLocation < 1100){
-                document.getElementById('navItem 2').classList.add("your-active-class");
-            } else if (scrollLocation > 1200 && scrollLocation < 2400){
-                document.getElementById('navItem 3').classList.add("your-active-class");
-            } else if (scrollLocation > 2400){
-                document.getElementById('navItem 4').classList.add("your-active-class");
-            };
-        }    
-    };
-        
-};
-  
     
+    // Get all sections that have an ID defined
+    const sections = document.querySelectorAll('section');
+    // loops over the sections object to return the current section
+    for (let i = 0; i < sections.length; i++){
+        // const changeBkGrndClr = document.querySelectorAll('li');
 
+        const navItem = document.getElementById('navItem ' + (i + 1));
+        navItem.classList.remove("your-active-class");
+        
+        
+        if (scrollLocation < 1000){
+            document.getElementById('navItem 1').classList.add("active");
+            document.getElementById('navItem 2').classList.remove("active");
+        } else if (scrollLocation > 1000 && scrollLocation < 1790){
+            document.getElementById('navItem 1').classList.remove("active");
+            document.getElementById('navItem 2').classList.add("active");
+            document.getElementById('navItem 3').classList.remove("active");
+        } else if (scrollLocation > 1790 && scrollLocation < 2400){
+            document.getElementById('navItem 2').classList.remove("active");
+            document.getElementById('navItem 3').classList.add("active");
+            document.getElementById('navItem 4').classList.remove("active");
+        } else if (scrollLocation > 2400){
+            document.getElementById('navItem 3').classList.remove("active");
+            document.getElementById('navItem 4').classList.add("active");
+        };
+    }            
+       
+};
 
-/**
- * End Main Functions
- * Begin Events
- * 
-*/
-
-// Build menu 
-
-// Scroll to section on link click
-
-// Set sections as active
+    // Add an event listener listening for scroll
+    window.addEventListener("scroll", navHighlighter);
 
 
