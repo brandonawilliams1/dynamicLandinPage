@@ -5,7 +5,7 @@ A web app that utilizes DOM manipulation techniques to generate elements on the 
 ### Screenshots
 ![Screenshot](./css/assets/Screenshot%202023-04-03%20at%2010-47-04%20Manipulating%20the%20DOM.png)
 
-[Demo Site](https://www.awesomescreenshot.com/video/16190513?key=ed87c52b7e1ab1d235124227a67674f8)
+[demo preview](https://www.awesomescreenshot.com/video/16190513?key=ed87c52b7e1ab1d235124227a67674f8)
 ## Running The App Remotely
 To run this app in the browser [click here](https://brandonawilliams1.github.io/dynamicLandinPage/) alternitively you can fork this repository and download it to your local computer. This reop doesn't require any dependancies.
 ## Running The App Locally
